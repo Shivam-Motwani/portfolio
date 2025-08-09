@@ -9,7 +9,7 @@
     <div class="container position-relative" data-aos="fade-up">
         <div class="row justify-content-center">
             <div class="col-lg-8">
-                <h1 class="display-2 fw-bold mb-4">Hello, I'm Shivam Motwani</h1>
+                <h1 class="display-2 fw-bold mb-4">Shivam Motwani</h1>
                 <p class="lead mb-4">Computer Science Student & Software Developer</p>
                 <p class="fs-5 mb-5">Passionate about Machine Learning, Cybersecurity, and Full-Stack Development</p>
                 <div class="hero-buttons">
@@ -26,7 +26,7 @@
 </section>
 
 <!-- Skills Preview Section -->
-<section class="py-5" id="skills">
+<section class="py-5" id="skills" style="background-color: #1a1a1a;">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center mb-5" data-aos="fade-up">
@@ -84,7 +84,7 @@
 </section>
 
 <!-- Education Section -->
-<section class="py-5 bg-light" id="education">
+<section class="py-5 bg-light" id="education" style="background-color: #2d2d2d !important;">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center mb-5" data-aos="fade-up">
@@ -156,7 +156,7 @@
 </section>
 
 <!-- Experience Section -->
-<section class="py-5" id="experience">
+<section class="py-5" id="experience" style="background-color: #1a1a1a;">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center mb-5" data-aos="fade-up">
@@ -240,7 +240,7 @@
 </section>
 
 <!-- Featured Projects Section -->
-<section class="py-5 bg-light" id="featured-projects">
+<section class="py-5 bg-light" id="featured-projects" style="background-color: #2d2d2d !important;">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center mb-5" data-aos="fade-up">
@@ -292,67 +292,20 @@
     </div>
 </section>
 
-<!-- CTA Section - Let's Work Together -->
-<section class="py-5 cta-section" id="cta">
-    <div class="cta-overlay"></div>
-    <div class="container position-relative">
+<!-- CTA Section - Simple Name Display -->
+<section class="py-5 name-display-section" id="cta">
+    <div class="container">
         <div class="row">
-            <div class="col-lg-10 mx-auto text-center" data-aos="fade-up">
-                <div class="cta-content">
-                    <h2 class="display-4 fw-bold mb-4 text-white">Let's Work Together</h2>
-                    <p class="lead mb-4 text-light">
-                        I'm passionate about creating innovative solutions in <strong>Machine Learning</strong>, 
-                        <strong>Cybersecurity</strong>, and <strong>Full-Stack Development</strong>. 
-                        Whether you have a project idea, need technical consultation, or want to collaborate on something amazing, I'm here to help bring your vision to life.
-                    </p>
-                    
-                    <div class="row g-4 mb-5">
-                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                            <div class="cta-feature">
-                                <i class="fas fa-brain fa-3x text-warning mb-3"></i>
-                                <h5 class="text-white">Machine Learning</h5>
-                                <p class="text-light small">From NLP to classification models, I build intelligent solutions that make data meaningful.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                            <div class="cta-feature">
-                                <i class="fas fa-shield-alt fa-3x text-danger mb-3"></i>
-                                <h5 class="text-white">Cybersecurity</h5>
-                                <p class="text-light small">Security-first approach with penetration testing and vulnerability assessment expertise.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-                            <div class="cta-feature">
-                                <i class="fas fa-code fa-3x text-success mb-3"></i>
-                                <h5 class="text-white">Full-Stack Development</h5>
-                                <p class="text-light small">Modern web applications with React, Django, and cloud-ready architectures.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="cta-buttons" data-aos="fade-up" data-aos-delay="400">
-                        <a href="{{ url_for('contact') }}" class="btn btn-warning btn-lg me-3 px-4 py-3">
-                            <i class="fas fa-paper-plane me-2"></i>Start a Conversation
-                        </a>
-                        <a href="mailto:theoryofnumbers123@gmail.com" class="btn btn-outline-light btn-lg px-4 py-3">
-                            <i class="fas fa-envelope me-2"></i>Email Me Directly
-                        </a>
-                    </div>
-                    
-                    <div class="mt-4">
-                        <p class="text-light small mb-2">Connect with me on:</p>
-                        <div class="social-links">
-                            <a href="https://linkedin.com/in/shivam-motwani" target="_blank" class="social-link me-3">
-                                <i class="fab fa-linkedin fa-2x"></i>
-                            </a>
-                            <a href="https://codeforces.com/profile/ShivamMotwani" target="_blank" class="social-link me-3">
-                                <i class="fas fa-code fa-2x"></i>
-                            </a>
-                            <a href="mailto:theoryofnumbers123@gmail.com" class="social-link">
-                                <i class="fas fa-envelope fa-2x"></i>
-                            </a>
-                        </div>
-                    </div>
+            <div class="col-12 text-center" data-aos="fade-up">
+                <h1 class="display-1 fw-bold name-heading">Shivam Motwani</h1>
+                <p class="lead name-subtitle">Computer Science Student & Software Developer</p>
+                <div class="contact-links mt-4">
+                    <a href="{{ url_for('contact') }}" class="btn contact-btn me-3">
+                        <i class="fas fa-paper-plane me-2"></i>Get In Touch
+                    </a>
+                    <a href="mailto:theoryofnumbers123@gmail.com" class="btn contact-btn-outline">
+                        <i class="fas fa-envelope me-2"></i>Email Me
+                    </a>
                 </div>
             </div>
         </div>

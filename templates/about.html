@@ -4,19 +4,19 @@
 
 {% block content %}
 <!-- About Hero Section -->
-<section class="page-hero bg-primary text-white py-5">
+<section class="page-hero text-white py-5" style="background: linear-gradient(135deg, #1a1a1a 0%, #2d1b1b 50%, #1a1a1a 100%);">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-8 mx-auto text-center" data-aos="fade-up">
                 <h1 class="display-4 fw-bold mb-4">About Me</h1>
-                <p class="lead">Learn more about my journey, skills, and passion for creating amazing web experiences</p>
+                <p class="lead">Learn more about my journey, skills, and passion for technology</p>
             </div>
         </div>
     </div>
 </section>
 
 <!-- About Content Section -->
-<section class="py-5">
+<section class="py-5" style="background-color: #1a1a1a; color: #f5f5f5;">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-4 mb-4 mb-lg-0" data-aos="fade-right">
@@ -60,24 +60,24 @@
                     
                     <div class="about-stats row g-3 mb-4">
                         <div class="col-sm-6">
-                            <div class="stat-item text-center p-3 bg-light rounded">
-                                <h3 class="fw-bold text-primary mb-1">[X]+</h3>
-                                <p class="mb-0">Projects Completed</p>
+                            <div class="stat-item text-center p-3 rounded" style="background-color: #2d2d2d;">
+                                <h3 class="fw-bold text-danger mb-1">92%</h3>
+                                <p class="mb-0 text-light">ML Model Accuracy</p>
                             </div>
                         </div>
                         <div class="col-sm-6">
-                            <div class="stat-item text-center p-3 bg-light rounded">
-                                <h3 class="fw-bold text-primary mb-1">[X]+</h3>
-                                <p class="mb-0">Happy Clients</p>
+                            <div class="stat-item text-center p-3 rounded" style="background-color: #2d2d2d;">
+                                <h3 class="fw-bold text-danger mb-1">1408</h3>
+                                <p class="mb-0 text-light">Codeforces Rating</p>
                             </div>
                         </div>
                     </div>
                     
                     <div class="about-actions">
-                        <a href="{{ url_for('download_resume') }}" class="btn btn-primary btn-lg me-3">
+                        <a href="{{ url_for('download_resume') }}" class="btn btn-danger btn-lg me-3">
                             <i class="fas fa-download me-2"></i>Download Resume
                         </a>
-                        <a href="{{ url_for('contact') }}" class="btn btn-outline-primary btn-lg">
+                        <a href="{{ url_for('contact') }}" class="btn btn-outline-light btn-lg">
                             <i class="fas fa-envelope me-2"></i>Get In Touch
                         </a>
                     </div>
@@ -88,11 +88,11 @@
 </section>
 
 <!-- Skills Section -->
-<section class="py-5 bg-light">
+<section class="py-5" style="background-color: #2d2d2d;">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center mb-5" data-aos="fade-up">
-                <h2 class="display-5 fw-bold">My Skills</h2>
+                <h2 class="display-5 fw-bold text-light">My Skills</h2>
                 <p class="lead text-muted">Technologies and tools I work with</p>
             </div>
         </div>
@@ -100,44 +100,36 @@
         <div class="row g-4">
             <!-- Frontend Skills -->
             <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                <div class="skill-category h-100">
+                <div class="skill-category h-100" style="background-color: #1a1a1a; color: #f5f5f5; padding: 2rem; border-radius: 0.5rem; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.3);">
                     <div class="skill-header text-center mb-4">
                         <div class="skill-icon mb-3">
-                            <i class="fas fa-paint-brush fa-3x text-primary"></i>
+                            <i class="fab fa-python fa-3x text-danger"></i>
                         </div>
-                        <h4>Frontend Development</h4>
+                        <h4 class="text-light">Languages</h4>
                     </div>
                     
                     <div class="skills-list">
                         <div class="skill-item d-flex align-items-center mb-3">
-                            <i class="fab fa-html5 fa-2x text-danger me-3"></i>
+                            <i class="fab fa-python fa-2x text-primary me-3"></i>
                             <div>
-                                <h6 class="mb-1">HTML5 & CSS3</h6>
-                                <small class="text-muted">Semantic markup and modern styling</small>
+                                <h6 class="mb-1 text-light">Python</h6>
+                                <small class="text-muted">Primary programming language</small>
                             </div>
                         </div>
                         
                         <div class="skill-item d-flex align-items-center mb-3">
                             <i class="fab fa-js-square fa-2x text-warning me-3"></i>
                             <div>
-                                <h6 class="mb-1">JavaScript (ES6+)</h6>
-                                <small class="text-muted">Modern JavaScript and frameworks</small>
+                                <h6 class="mb-1 text-light">JavaScript</h6>
+                                <small class="text-muted">Frontend and backend development</small>
                             </div>
                         </div>
                         
                         <div class="skill-item d-flex align-items-center mb-3">
-                            <i class="fab fa-react fa-2x text-info me-3"></i>
+                            <i class="fas fa-database fa-2x text-info me-3"></i>
                             <div>
-                                <h6 class="mb-1">React.js</h6>
-                                <small class="text-muted">Component-based UI development</small>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-item d-flex align-items-center mb-3">
-                            <i class="fab fa-bootstrap fa-2x text-purple me-3"></i>
-                            <div>
-                                <h6 class="mb-1">Bootstrap & Tailwind</h6>
-                                <small class="text-muted">Responsive CSS frameworks</small>
+                                <h6 class="mb-1 text-light">MySQL</h6>
+                                <small class="text-muted">Database management and queries</small>
                             </div>
                         </div>
                     </div>
@@ -146,44 +138,36 @@
             
             <!-- Backend Skills -->
             <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-                <div class="skill-category h-100">
+                <div class="skill-category h-100" style="background-color: #1a1a1a; color: #f5f5f5; padding: 2rem; border-radius: 0.5rem; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.3);">
                     <div class="skill-header text-center mb-4">
                         <div class="skill-icon mb-3">
-                            <i class="fas fa-server fa-3x text-success"></i>
+                            <i class="fas fa-code fa-3x text-success"></i>
                         </div>
-                        <h4>Backend Development</h4>
+                        <h4 class="text-light">Frameworks</h4>
                     </div>
                     
                     <div class="skills-list">
                         <div class="skill-item d-flex align-items-center mb-3">
-                            <i class="fab fa-python fa-2x text-primary me-3"></i>
+                            <i class="fab fa-react fa-2x text-info me-3"></i>
                             <div>
-                                <h6 class="mb-1">Python</h6>
-                                <small class="text-muted">Flask, Django, and FastAPI</small>
+                                <h6 class="mb-1 text-light">React</h6>
+                                <small class="text-muted">Component-based UI development</small>
                             </div>
                         </div>
                         
                         <div class="skill-item d-flex align-items-center mb-3">
-                            <i class="fab fa-node-js fa-2x text-success me-3"></i>
+                            <i class="fas fa-server fa-2x text-success me-3"></i>
                             <div>
-                                <h6 class="mb-1">Node.js</h6>
-                                <small class="text-muted">Express.js and REST APIs</small>
+                                <h6 class="mb-1 text-light">Django</h6>
+                                <small class="text-muted">Python web framework</small>
                             </div>
                         </div>
                         
                         <div class="skill-item d-flex align-items-center mb-3">
-                            <i class="fas fa-database fa-2x text-info me-3"></i>
+                            <i class="fas fa-tools fa-2x text-warning me-3"></i>
                             <div>
-                                <h6 class="mb-1">Databases</h6>
-                                <small class="text-muted">PostgreSQL, MongoDB, MySQL</small>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-item d-flex align-items-center mb-3">
-                            <i class="fas fa-cloud fa-2x text-warning me-3"></i>
-                            <div>
-                                <h6 class="mb-1">Cloud Services</h6>
-                                <small class="text-muted">AWS, Heroku, Docker</small>
+                                <h6 class="mb-1 text-light">Git & Excel</h6>
+                                <small class="text-muted">Version control and data analysis</small>
                             </div>
                         </div>
                     </div>
@@ -192,44 +176,36 @@
             
             <!-- Tools & Other Skills -->
             <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
-                <div class="skill-category h-100">
+                <div class="skill-category h-100" style="background-color: #1a1a1a; color: #f5f5f5; padding: 2rem; border-radius: 0.5rem; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.3);">
                     <div class="skill-header text-center mb-4">
                         <div class="skill-icon mb-3">
-                            <i class="fas fa-tools fa-3x text-dark"></i>
+                            <i class="fas fa-shield-alt fa-3x text-danger"></i>
                         </div>
-                        <h4>Tools & Other</h4>
+                        <h4 class="text-light">Cybersecurity</h4>
                     </div>
                     
                     <div class="skills-list">
                         <div class="skill-item d-flex align-items-center mb-3">
-                            <i class="fab fa-git-alt fa-2x text-danger me-3"></i>
+                            <i class="fas fa-bug fa-2x text-danger me-3"></i>
                             <div>
-                                <h6 class="mb-1">Git & GitHub</h6>
-                                <small class="text-muted">Version control and collaboration</small>
+                                <h6 class="mb-1 text-light">Metasploit</h6>
+                                <small class="text-muted">Penetration testing framework</small>
                             </div>
                         </div>
                         
                         <div class="skill-item d-flex align-items-center mb-3">
-                            <i class="fas fa-code-branch fa-2x text-primary me-3"></i>
+                            <i class="fas fa-network-wired fa-2x text-primary me-3"></i>
                             <div>
-                                <h6 class="mb-1">DevOps</h6>
-                                <small class="text-muted">CI/CD, Docker, Linux</small>
+                                <h6 class="mb-1 text-light">Nmap</h6>
+                                <small class="text-muted">Network discovery and security auditing</small>
                             </div>
                         </div>
                         
                         <div class="skill-item d-flex align-items-center mb-3">
-                            <i class="fas fa-chart-line fa-2x text-success me-3"></i>
+                            <i class="fas fa-search fa-2x text-info me-3"></i>
                             <div>
-                                <h6 class="mb-1">Data Analysis</h6>
-                                <small class="text-muted">Pandas, NumPy, Matplotlib</small>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-item d-flex align-items-center mb-3">
-                            <i class="fas fa-mobile-alt fa-2x text-info me-3"></i>
-                            <div>
-                                <h6 class="mb-1">Responsive Design</h6>
-                                <small class="text-muted">Mobile-first development</small>
+                                <h6 class="mb-1 text-light">Tcpdump & Wireshark</h6>
+                                <small class="text-muted">Network protocol analysis</small>
                             </div>
                         </div>
                     </div>
@@ -240,11 +216,11 @@
 </section>
 
 <!-- Experience/Education Section -->
-<section class="py-5">
+<section class="py-5" style="background-color: #1a1a1a; color: #f5f5f5;">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center mb-5" data-aos="fade-up">
-                <h2 class="display-5 fw-bold">Experience & Education</h2>
+                <h2 class="display-5 fw-bold text-light">Experience & Education</h2>
                 <p class="lead text-muted">My professional journey and learning path</p>
             </div>
         </div>
@@ -252,32 +228,32 @@
         <div class="row">
             <!-- Experience -->
             <div class="col-lg-6 mb-4" data-aos="fade-right">
-                <h3 class="fw-bold mb-4">
-                    <i class="fas fa-briefcase text-primary me-2"></i>Experience
+                <h3 class="fw-bold mb-4 text-light">
+                    <i class="fas fa-briefcase text-danger me-2"></i>Experience
                 </h3>
                 
                 <div class="timeline">
                     <div class="timeline-item mb-4">
-                        <div class="timeline-content p-4 bg-light rounded">
-                            <h5 class="fw-bold">Senior Full Stack Developer</h5>
-                            <p class="text-primary mb-2">[Company Name] • 2023 - Present</p>
-                            <p class="mb-0">Leading development of scalable web applications using modern technologies. Mentoring junior developers and implementing best practices.</p>
+                        <div class="timeline-content p-4 rounded" style="background-color: #2d2d2d;">
+                            <h5 class="fw-bold text-light">Software Development Intern</h5>
+                            <p class="text-danger mb-2">Blue Banyan • May – July 2025</p>
+                            <ul class="mb-0 text-light">
+                                <li>Improved UI and UX across the platform, modernizing multiple core components</li>
+                                <li>Developed responsive and accessible frontend features using React and CSS</li>
+                                <li>Boosted website traffic through performance-focused interface updates</li>
+                            </ul>
                         </div>
                     </div>
                     
                     <div class="timeline-item mb-4">
-                        <div class="timeline-content p-4 bg-light rounded">
-                            <h5 class="fw-bold">Full Stack Developer</h5>
-                            <p class="text-primary mb-2">[Company Name] • 2021 - 2023</p>
-                            <p class="mb-0">Developed and maintained multiple client projects using Python, JavaScript, and cloud technologies. Improved application performance by 40%.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="timeline-item">
-                        <div class="timeline-content p-4 bg-light rounded">
-                            <h5 class="fw-bold">Junior Web Developer</h5>
-                            <p class="text-primary mb-2">[Company Name] • 2020 - 2021</p>
-                            <p class="mb-0">Started my professional journey building responsive websites and learning modern development practices.</p>
+                        <div class="timeline-content p-4 rounded" style="background-color: #2d2d2d;">
+                            <h5 class="fw-bold text-light">Achievements</h5>
+                            <p class="text-danger mb-2">VIT & Competitive Programming • 2020 - Present</p>
+                            <ul class="mb-0 text-light">
+                                <li>3rd Place (Top 2%) - Reverse Coding Competition, VIT (150 teams)</li>
+                                <li>Codeforces Rating: 1408</li>
+                                <li>IBM Gen-AI Certification (June 2025)</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -285,32 +261,33 @@
             
             <!-- Education -->
             <div class="col-lg-6 mb-4" data-aos="fade-left">
-                <h3 class="fw-bold mb-4">
-                    <i class="fas fa-graduation-cap text-primary me-2"></i>Education
+                <h3 class="fw-bold mb-4 text-light">
+                    <i class="fas fa-graduation-cap text-danger me-2"></i>Education
                 </h3>
                 
                 <div class="timeline">
                     <div class="timeline-item mb-4">
-                        <div class="timeline-content p-4 bg-light rounded">
-                            <h5 class="fw-bold">Bachelor of Computer Science</h5>
-                            <p class="text-primary mb-2">[University Name] • 2016 - 2020</p>
-                            <p class="mb-0">Graduated with honors. Focused on software engineering, algorithms, and web development technologies.</p>
+                        <div class="timeline-content p-4 rounded" style="background-color: #2d2d2d;">
+                            <h5 class="fw-bold text-light">B.Tech in Computer Science and Engineering</h5>
+                            <p class="text-danger mb-2">Vellore Institute of Technology (VIT), Vellore • Aug 2022 – May 2026</p>
+                            <p class="mb-1 text-light"><strong>CGPA: 8.9/10</strong></p>
+                            <p class="mb-0 text-light">Focus on Machine Learning, Cybersecurity, and Full-Stack Development</p>
                         </div>
                     </div>
                     
                     <div class="timeline-item mb-4">
-                        <div class="timeline-content p-4 bg-light rounded">
-                            <h5 class="fw-bold">Full Stack Web Development</h5>
-                            <p class="text-primary mb-2">[Bootcamp/Course Name] • 2020</p>
-                            <p class="mb-0">Intensive program covering modern web development stack including React, Node.js, and database design.</p>
+                        <div class="timeline-content p-4 rounded" style="background-color: #2d2d2d;">
+                            <h5 class="fw-bold text-light">CBSE Class 12</h5>
+                            <p class="text-danger mb-2">DPS Durg, Durg • 2022</p>
+                            <p class="mb-0 text-light"><strong>Percentage: 89.00%</strong></p>
                         </div>
                     </div>
                     
                     <div class="timeline-item">
-                        <div class="timeline-content p-4 bg-light rounded">
-                            <h5 class="fw-bold">Continuous Learning</h5>
-                            <p class="text-primary mb-2">Various Platforms • Ongoing</p>
-                            <p class="mb-0">Regular courses on Udemy, Coursera, and other platforms to stay current with latest technologies and best practices.</p>
+                        <div class="timeline-content p-4 rounded" style="background-color: #2d2d2d;">
+                            <h5 class="fw-bold text-light">CBSE Class 10</h5>
+                            <p class="text-danger mb-2">DPS Durg, Durg • 2020</p>
+                            <p class="mb-0 text-light"><strong>Percentage: 92.00%</strong></p>
                         </div>
                     </div>
                 </div>

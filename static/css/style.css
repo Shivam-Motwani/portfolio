@@ -7,17 +7,18 @@
     --danger-color: #dc2626;
     --warning-color: #d97706;
     --info-color: #0891b2;
-    --light-color: #fef7f0;
-    --dark-color: #1c1917;
-    --text-dark: #292524;
-    --text-muted: #78716c;
-    --border-color: #e7e5e4;
-    --brown-light: #a8a29e;
-    --brown-dark: #57534e;
+    --light-color: #2d2d2d;
+    --dark-color: #1a1a1a;
+    --text-dark: #f5f5f5;
+    --text-light: #f5f5f5;
+    --text-muted: #d1d1d1;
+    --border-color: #404040;
+    --brown-light: #6b5b73;
+    --brown-dark: #f5f5f5;
     --red-dark: #991b1b;
-    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.3), 0 4px 6px -4px rgb(0 0 0 / 0.3);
     --border-radius: 0.5rem;
     --transition: all 0.3s ease;
 }
@@ -32,6 +33,53 @@ body {
     line-height: 1.6;
     color: var(--text-dark);
     overflow-x: hidden;
+    background-color: #1a1a1a;
+}
+
+/* Ensure all text elements are light colored */
+h1, h2, h3, h4, h5, h6, p, span, div, a, li, td, th, label {
+    color: #f5f5f5 !important;
+}
+
+/* Override Bootstrap's default text colors */
+.text-dark {
+    color: #f5f5f5 !important;
+}
+
+.text-muted {
+    color: #d1d1d1 !important;
+}
+
+/* Ensure card text is light */
+.card, .card-body, .card-title, .card-text {
+    color: #f5f5f5 !important;
+    background-color: var(--light-color) !important;
+}
+
+/* Additional Bootstrap overrides for better contrast */
+.btn {
+    color: #f5f5f5 !important;
+}
+
+.btn-outline-primary {
+    color: #f5f5f5 !important;
+    border-color: var(--primary-color) !important;
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    color: #ffffff !important;
+}
+
+/* Timeline and other elements */
+.timeline-content, .timeline-content * {
+    color: #f5f5f5 !important;
+}
+
+/* Lead text and other Bootstrap classes */
+.lead {
+    color: #d1d1d1 !important;
 }
 
 .container {
@@ -63,7 +111,7 @@ html {
 
 /* ===== NAVIGATION STYLES ===== */
 #mainNav {
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(26, 26, 26, 0.95);
     backdrop-filter: blur(10px);
     box-shadow: var(--shadow-sm);
     transition: var(--transition);
@@ -71,7 +119,7 @@ html {
 }
 
 #mainNav.scrolled {
-    background: rgba(255, 255, 255, 0.98);
+    background: rgba(26, 26, 26, 0.98);
     box-shadow: var(--shadow-md);
     padding: 0.5rem 0;
 }
@@ -84,7 +132,7 @@ html {
 }
 
 .navbar-nav .nav-link {
-    color: var(--text-dark) !important;
+    color: #f5f5f5 !important;
     font-weight: 500;
     margin: 0 0.5rem;
     padding: 0.5rem 1rem !important;
@@ -101,7 +149,7 @@ html {
 /* ===== HERO SECTION STYLES ===== */
 .hero-section {
     min-height: 100vh;
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--red-dark) 50%, var(--dark-color) 100%);
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d1b1b 50%, #1a1a1a 100%);
     position: relative;
     overflow: hidden;
 }
@@ -208,22 +256,23 @@ html {
 
 /* ===== CARD STYLES ===== */
 .skill-card, .project-card {
-    background: white;
+    background: #2d2d2d;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-sm);
     transition: var(--transition);
     border: 1px solid var(--border-color);
     overflow: hidden;
+    color: var(--text-dark);
 }
 
 .skill-card:hover, .project-card:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-lg);
-    border-color: var(--brown-light);
+    border-color: var(--primary-color);
 }
 
 .skill-category {
-    background: white;
+    background: var(--light-color);
     border-radius: var(--border-radius);
     padding: 2rem;
     box-shadow: var(--shadow-sm);
@@ -303,11 +352,19 @@ html {
     padding: 0.75rem 1rem;
     transition: var(--transition);
     font-size: 1rem;
+    background-color: var(--light-color);
+    color: #f5f5f5;
+}
+
+.form-control::placeholder {
+    color: #a8a8a8;
 }
 
 .form-control:focus, .form-select:focus {
     border-color: var(--primary-color);
     box-shadow: 0 0 0 0.2rem rgba(220, 38, 38, 0.25);
+    background-color: var(--light-color);
+    color: #f5f5f5;
 }
 
 .form-label {
@@ -365,12 +422,12 @@ html {
     height: 10px;
     background: var(--primary-color);
     border-radius: 50%;
-    border: 3px solid white;
+    border: 3px solid var(--border-color);
     box-shadow: var(--shadow-sm);
 }
 
 .timeline-content {
-    background: white;
+    background: var(--light-color);
     border: 1px solid var(--border-color);
     transition: var(--transition);
 }
@@ -417,7 +474,7 @@ html {
 }
 
 .social-icon i.fa-github:hover {
-    color: var(--dark-color);
+    color: #f5f5f5;
 }
 
 .social-icon i.fa-linkedin:hover {
@@ -450,7 +507,7 @@ footer .social-links a:hover {
 }
 
 .text-brown-dark {
-    color: var(--brown-dark) !important;
+    color: #f5f5f5 !important;
 }
 
 .bg-gradient-primary {
@@ -532,10 +589,11 @@ footer .social-links a:hover {
 
 /* ===== ACCORDION STYLES ===== */
 .accordion-button {
-    background: white;
+    background: var(--light-color);
     border: none;
     box-shadow: none;
     font-weight: 600;
+    color: #f5f5f5;
 }
 
 .accordion-button:not(.collapsed) {
@@ -587,11 +645,12 @@ footer .social-links a:hover {
 
 /* ===== EDUCATION SECTION ===== */
 .education-card {
-    background: white;
+    background: #2d2d2d;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-md);
     border-left: 4px solid var(--primary-color);
     transition: var(--transition);
+    color: var(--text-dark);
 }
 
 .education-card:hover {
@@ -605,11 +664,12 @@ footer .social-links a:hover {
 
 /* ===== EXPERIENCE SECTION ===== */
 .experience-card {
-    background: white;
+    background: #2d2d2d;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-md);
     border: 1px solid var(--border-color);
     transition: var(--transition);
+    color: var(--text-dark);
 }
 
 .experience-card:hover {
@@ -623,10 +683,11 @@ footer .social-links a:hover {
 }
 
 .achievement-card {
-    background: linear-gradient(135deg, #fef7f0 0%, #fff7ed 100%);
+    background: linear-gradient(135deg, #2d2d2d 0%, #3a3a3a 100%);
     border-radius: var(--border-radius);
     border: 1px solid var(--border-color);
     transition: var(--transition);
+    color: var(--text-dark);
 }
 
 .achievement-card:hover {
@@ -635,74 +696,80 @@ footer .social-links a:hover {
     border-color: var(--secondary-color);
 }
 
-/* ===== ENHANCED CTA SECTION ===== */
-.cta-section {
-    background: linear-gradient(135deg, #1c1917 0%, #292524 25%, #8b4513 75%, #dc2626 100%);
-    position: relative;
-    overflow: hidden;
+/* ===== SIMPLE NAME DISPLAY SECTION ===== */
+.name-display-section {
+    background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+    padding: 4rem 0;
+    border-top: 1px solid #404040;
 }
 
-.cta-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(45deg, rgba(28, 25, 23, 0.9) 0%, rgba(139, 69, 19, 0.8) 50%, rgba(220, 38, 38, 0.9) 100%);
-    z-index: 1;
+.name-heading {
+    color: #f5f5f5;
+    font-size: 4rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.cta-overlay::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: 
-        radial-gradient(circle at 25% 25%, rgba(220, 38, 38, 0.3) 0%, transparent 50%),
-        radial-gradient(circle at 75% 75%, rgba(139, 69, 19, 0.3) 0%, transparent 50%);
-    animation: backgroundPulse 8s ease-in-out infinite;
+.name-subtitle {
+    color: #a8a8a8;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    font-weight: 400;
 }
 
-@keyframes backgroundPulse {
-    0%, 100% { opacity: 0.3; }
-    50% { opacity: 0.6; }
+.contact-btn {
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+    color: #f5f5f5;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
 }
 
-.cta-content {
-    position: relative;
-    z-index: 2;
+.contact-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(220, 38, 38, 0.4);
+    color: #f5f5f5;
 }
 
-.cta-feature {
-    padding: 1.5rem;
-    text-align: center;
+.contact-btn-outline {
+    background: transparent;
+    color: #f5f5f5;
+    border: 2px solid #f5f5f5;
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
 }
 
-.cta-feature i {
-    transition: var(--transition);
+.contact-btn-outline:hover {
+    background: #f5f5f5;
+    color: #1a1a1a;
+    transform: translateY(-2px);
 }
 
-.cta-feature:hover i {
-    transform: scale(1.1);
-}
-
-.social-links {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-}
-
-.social-link {
-    color: rgba(255, 255, 255, 0.8);
-    transition: var(--transition);
-    text-decoration: none;
-}
-
-.social-link:hover {
-    color: var(--warning-color);
-    transform: translateY(-3px);
+@media (max-width: 768px) {
+    .name-heading {
+        font-size: 2.5rem;
+    }
+    
+    .name-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .contact-links .btn {
+        display: block;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    
+    .contact-links .btn:last-child {
+        margin-bottom: 0;
+    }
 }
 
 /* ===== PROJECT PLACEHOLDER ===== */
@@ -726,25 +793,30 @@ footer .social-links a:hover {
 
 /* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 768px) {
-    .cta-feature {
-        margin-bottom: 2rem;
-    }
-    
-    .cta-buttons {
-        flex-direction: column;
-        gap: 1rem;
-    }
-    
-    .cta-buttons .btn {
-        width: 100%;
-    }
-    
     .education-card,
     .experience-card {
         margin-bottom: 1.5rem;
     }
     
-    .social-links {
-        gap: 2rem;
+    .name-heading {
+        font-size: 2.5rem !important;
+    }
+    
+    .hero-section h1 {
+        font-size: 2rem !important;
+    }
+    
+    .name-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .contact-links .btn {
+        display: block;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    
+    .contact-links .btn:last-child {
+        margin-bottom: 0;
     }
 }
