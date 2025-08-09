@@ -1,0 +1,317 @@
+{% extends "base.html" %}
+
+{% block title %}Contact Me - Shivam Motwani{% endblock %}
+
+{% block content %}
+<!-- Contact Hero Section -->
+<section class="page-hero bg-primary text-white py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8 mx-auto text-center" data-aos="fade-up">
+                <h1 class="display-4 fw-bold mb-4">Get In Touch</h1>
+                <p class="lead">Have a project in mind or just want to say hello? I'd love to hear from you!</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Content -->
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <!-- Contact Form -->
+            <div class="col-lg-8 mb-5" data-aos="fade-right">
+                <div class="contact-form">
+                    <h2 class="fw-bold mb-4">Send Me a Message</h2>
+                    
+                    <form method="POST" action="{{ url_for('contact') }}" class="needs-validation" novalidate>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="name" class="form-label">Full Name *</label>
+                                <input type="text" 
+                                       class="form-control" 
+                                       id="name" 
+                                       name="name" 
+                                       required
+                                       placeholder="Your full name">
+                                <div class="invalid-feedback">
+                                    Please provide your name.
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <label for="email" class="form-label">Email Address *</label>
+                                <input type="email" 
+                                       class="form-control" 
+                                       id="email" 
+                                       name="email" 
+                                       required
+                                       placeholder="your.email@example.com">
+                                <div class="invalid-feedback">
+                                    Please provide a valid email address.
+                                </div>
+                            </div>
+                            
+                            <div class="col-12">
+                                <label for="subject" class="form-label">Subject</label>
+                                <select class="form-select" id="subject" name="subject">
+                                    <option value="">Select a subject (optional)</option>
+                                    <option value="project">Project Collaboration</option>
+                                    <option value="job">Job Opportunity</option>
+                                    <option value="freelance">Freelance Work</option>
+                                    <option value="consultation">Consultation</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="col-12">
+                                <label for="message" class="form-label">Message *</label>
+                                <textarea class="form-control" 
+                                          id="message" 
+                                          name="message" 
+                                          rows="6" 
+                                          required
+                                          placeholder="Tell me about your project or how I can help you..."></textarea>
+                                <div class="invalid-feedback">
+                                    Please provide a message.
+                                </div>
+                            </div>
+                            
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" 
+                                           type="checkbox" 
+                                           id="consent" 
+                                           required>
+                                    <label class="form-check-label" for="consent">
+                                        I agree to be contacted regarding my inquiry *
+                                    </label>
+                                    <div class="invalid-feedback">
+                                        Please check this box to continue.
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary btn-lg">
+                                    <i class="fas fa-paper-plane me-2"></i>Send Message
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Contact Information -->
+            <div class="col-lg-4" data-aos="fade-left">
+                <div class="contact-info">
+                    <h3 class="fw-bold mb-4">Contact Information</h3>
+                    
+                    <div class="contact-item d-flex align-items-start mb-4">
+                        <div class="contact-icon me-3">
+                            <i class="fas fa-envelope fa-lg text-primary"></i>
+                        </div>
+                        <div>
+                            <h6 class="mb-1">Email</h6>
+                            <p class="text-muted mb-0">theoryofnumbers123@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item d-flex align-items-start mb-4">
+                        <div class="contact-icon me-3">
+                            <i class="fas fa-map-marker-alt fa-lg text-primary"></i>
+                        </div>
+                        <div>
+                            <h6 class="mb-1">Location</h6>
+                            <p class="text-muted mb-0">Vellore, Tamil Nadu</p>
+                            <small class="text-muted">Available for remote work</small>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item d-flex align-items-start mb-4">
+                        <div class="contact-icon me-3">
+                            <i class="fas fa-clock fa-lg text-primary"></i>
+                        </div>
+                        <div>
+                            <h6 class="mb-1">Response Time</h6>
+                            <p class="text-muted mb-0">Usually within 24 hours</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Social Media Links -->
+                    <div class="social-links mt-4">
+                        <h6 class="mb-3">Connect With Me</h6>
+                        <div class="d-flex">
+                            <a href="https://github.com/Shivam-Motwani" 
+                               target="_blank" 
+                               class="social-icon me-3"
+                               title="GitHub">
+                                <i class="fab fa-github fa-2x"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/shivam-motwani" 
+                               target="_blank" 
+                               class="social-icon"
+                               title="LinkedIn">
+                                <i class="fab fa-linkedin fa-2x"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Additional Info -->
+                    <div class="additional-info mt-4 p-4 bg-light rounded">
+                        <h6 class="mb-3">
+                            <i class="fas fa-info-circle text-primary me-2"></i>Quick Info
+                        </h6>
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2">
+                                <i class="fas fa-check text-success me-2"></i>
+                                Available for freelance projects
+                            </li>
+                            <li class="mb-2">
+                                <i class="fas fa-check text-success me-2"></i>
+                                Open to full-time opportunities
+                            </li>
+                            <li class="mb-2">
+                                <i class="fas fa-check text-success me-2"></i>
+                                Remote work friendly
+                            </li>
+                            <li class="mb-0">
+                                <i class="fas fa-check text-success me-2"></i>
+                                Free initial consultation
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Download Resume -->
+                    <div class="resume-download mt-4">
+                        <a href="{{ url_for('download_resume') }}" 
+                           class="btn btn-outline-primary btn-lg w-100">
+                            <i class="fas fa-download me-2"></i>Download My Resume
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="text-center mb-5" data-aos="fade-up">
+                    <h2 class="display-6 fw-bold">Frequently Asked Questions</h2>
+                    <p class="lead text-muted">Quick answers to common questions</p>
+                </div>
+                
+                <div class="accordion" id="faqAccordion" data-aos="fade-up">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="faq1">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1">
+                                What is your typical project timeline?
+                            </button>
+                        </h2>
+                        <div id="collapse1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Project timelines vary depending on complexity, but most small to medium projects take 2-6 weeks. 
+                                I always provide a detailed timeline estimate after our initial consultation.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="faq2">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2">
+                                Do you offer ongoing maintenance and support?
+                            </button>
+                        </h2>
+                        <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Yes! I offer various maintenance packages to keep your website updated, secure, and running smoothly. 
+                                This includes regular updates, security monitoring, and technical support.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="faq3">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3">
+                                What technologies do you specialize in?
+                            </button>
+                        </h2>
+                        <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                I specialize in Python (Flask, Django), JavaScript (React, Vue.js), and modern web technologies. 
+                                I'm also experienced with databases, cloud deployment, and API development.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="faq4">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4">
+                                Do you work with clients internationally?
+                            </button>
+                        </h2>
+                        <div id="collapse4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Absolutely! I work with clients worldwide and am comfortable with different time zones. 
+                                I use modern communication tools to ensure smooth collaboration regardless of location.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+    // Form validation
+    (function() {
+        'use strict';
+        window.addEventListener('load', function() {
+            var forms = document.getElementsByClassName('needs-validation');
+            var validation = Array.prototype.filter.call(forms, function(form) {
+                form.addEventListener('submit', function(event) {
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        }, false);
+    })();
+    
+    // Character counter for message field
+    const messageField = document.getElementById('message');
+    if (messageField) {
+        messageField.addEventListener('input', function() {
+            const currentLength = this.value.length;
+            const maxLength = 1000;
+            
+            // Create or update character counter
+            let counter = document.getElementById('message-counter');
+            if (!counter) {
+                counter = document.createElement('small');
+                counter.id = 'message-counter';
+                counter.className = 'text-muted';
+                this.parentNode.appendChild(counter);
+            }
+            
+            counter.textContent = `${currentLength}/1000 characters`;
+            
+            if (currentLength > maxLength) {
+                counter.className = 'text-danger';
+                this.value = this.value.substring(0, maxLength);
+            } else {
+                counter.className = 'text-muted';
+            }
+        });
+    }
+</script>
+{% endblock %}

@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "title": "E-Commerce Web Application",
+    "description": "A full-stack e-commerce platform built with Flask and PostgreSQL. Features include user authentication, product catalog, shopping cart, and payment integration.",
+    "image": "ecommerce-app.jpg",
+    "technologies": ["Flask", "PostgreSQL", "Bootstrap", "Stripe API", "SQLAlchemy"],
+    "github_url": "https://github.com/yourusername/ecommerce-app",
+    "demo_url": "https://your-ecommerce-demo.herokuapp.com",
+    "featured": true
+  },
+  {
+    "id": 2,
+    "title": "Task Management Dashboard",
+    "description": "A responsive task management application with drag-and-drop functionality, real-time updates, and team collaboration features.",
+    "image": "task-dashboard.jpg",
+    "technologies": ["React", "Node.js", "Socket.io", "MongoDB", "Material-UI"],
+    "github_url": "https://github.com/yourusername/task-dashboard",
+    "demo_url": "https://your-task-demo.netlify.app",
+    "featured": true
+  },
+  {
+    "id": 3,
+    "title": "Weather Forecast App",
+    "description": "A clean and intuitive weather application that provides accurate forecasts with beautiful visualizations and location-based services.",
+    "image": "weather-app.jpg",
+    "technologies": ["JavaScript", "OpenWeather API", "Chart.js", "CSS3", "HTML5"],
+    "github_url": "https://github.com/yourusername/weather-app",
+    "demo_url": "https://your-weather-demo.github.io",
+    "featured": false
+  },
+  {
+    "id": 4,
+    "title": "Data Visualization Platform",
+    "description": "Interactive data visualization tool for analyzing large datasets with customizable charts, filters, and export capabilities.",
+    "image": "data-viz.jpg",
+    "technologies": ["Python", "Plotly", "Pandas", "Streamlit", "NumPy"],
+    "github_url": "https://github.com/yourusername/data-viz-platform",
+    "demo_url": "https://your-dataviz-demo.streamlit.app",
+    "featured": true
+  },
+  {
+    "id": 5,
+    "title": "Personal Finance Tracker",
+    "description": "A comprehensive personal finance management app with expense tracking, budget planning, and financial goal setting features.",
+    "image": "finance-tracker.jpg",
+    "technologies": ["Vue.js", "Firebase", "Chart.js", "Vuetify", "Cloud Functions"],
+    "github_url": "https://github.com/yourusername/finance-tracker",
+    "demo_url": "https://your-finance-demo.web.app",
+    "featured": false
+  },
+  {
+    "id": 6,
+    "title": "Real-time Chat Application",
+    "description": "A modern chat application with real-time messaging, file sharing, emoji support, and multiple chat rooms functionality.",
+    "image": "chat-app.jpg",
+    "technologies": ["Socket.io", "Express.js", "MongoDB", "JWT", "Cloudinary"],
+    "github_url": "https://github.com/yourusername/chat-app",
+    "demo_url": "https://your-chat-demo.herokuapp.com",
+    "featured": false
+  }
+]

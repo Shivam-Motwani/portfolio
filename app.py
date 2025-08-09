@@ -1,0 +1,105 @@
+from flask import Flask, render_template, request, flash, redirect, url_for, send_file
+from flask_mail import Mail, Message
+import json
+import csv
+import os
+from datetime import datetime
+
+app = Flask(__name__)
+app.secret_key = 'your-secret-key-change-this-in-production'
+
+# Flask-Mail configuration (optional - for contact form)
+app.config['MAIL_SERVER'] = 'smtp.gmail.com'
+app.config['MAIL_PORT'] = 587
+app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_USERNAME'] = os.environ.get('MAIL_USERNAME')
+app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD')
+app.config['MAIL_DEFAULT_SENDER'] = os.environ.get('MAIL_USERNAME')
+
+mail = Mail(app)
+
+def load_projects():
+    """Load projects from JSON file"""
+    try:
+        with open('data/projects.json', 'r') as f:
+            return json.load(f)
+    except FileNotFoundError:
+        return []
+
+@app.route('/')
+def home():
+    """Home page with hero section"""
+    return render_template('index.html')
+
+@app.route('/about')
+def about():
+    """About page with bio and skills"""
+    return render_template('about.html')
+
+@app.route('/projects')
+def projects():
+    """Projects page with portfolio showcase"""
+    projects_data = load_projects()
+    return render_template('projects.html', projects=projects_data)
+
+@app.route('/contact', methods=['GET', 'POST'])
+def contact():
+    """Contact page with form"""
+    if request.method == 'POST':
+        name = request.form.get('name')
+        email = request.form.get('email')
+        message = request.form.get('message')
+        
+        # Save to CSV for local testing
+        save_contact_to_csv(name, email, message)
+        
+        # Optionally send email (uncomment if configured)
+        # send_contact_email(name, email, message)
+        
+        flash('Thank you for your message! I\'ll get back to you soon.', 'success')
+        return redirect(url_for('contact'))
+    
+    return render_template('contact.html')
+
+@app.route('/download-resume')
+def download_resume():
+    """Download resume file"""
+    try:
+        return send_file('static/files/resume.pdf', as_attachment=True)
+    except FileNotFoundError:
+        flash('Resume file not found. Please contact me directly.', 'error')
+        return redirect(url_for('contact'))
+
+def save_contact_to_csv(name, email, message):
+    """Save contact form data to CSV file"""
+    csv_file = 'data/contacts.csv'
+    file_exists = os.path.isfile(csv_file)
+    
+    with open(csv_file, 'a', newline='', encoding='utf-8') as f:
+        writer = csv.writer(f)
+        if not file_exists:
+            writer.writerow(['Date', 'Name', 'Email', 'Message'])
+        writer.writerow([datetime.now().strftime('%Y-%m-%d %H:%M:%S'), name, email, message])
+
+def send_contact_email(name, email, message):
+    """Send contact form data via email (optional)"""
+    try:
+        msg = Message(
+            subject=f'Portfolio Contact Form - {name}',
+            recipients=[app.config['MAIL_USERNAME']],
+            body=f'''
+            New contact form submission:
+            
+            Name: {name}
+            Email: {email}
+            Message: {message}
+            
+            Sent from your portfolio website.
+            '''
+        )
+        mail.send(msg)
+    except Exception as e:
+        print(f"Error sending email: {e}")
+
+if __name__ == '__main__':
+    app.run(debug=True)

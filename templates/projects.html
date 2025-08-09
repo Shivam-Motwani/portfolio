@@ -1,0 +1,200 @@
+{% extends "base.html" %}
+
+{% block title %}Projects - Shivam Motwani{% endblock %}
+
+{% block content %}
+<!-- Projects Hero Section -->
+<section class="page-hero bg-primary text-white py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8 mx-auto text-center" data-aos="fade-up">
+                <h1 class="display-4 fw-bold mb-4">My Projects</h1>
+                <p class="lead">A showcase of my recent work and personal projects that demonstrate my skills and creativity</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Filter Section -->
+<section class="py-4 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="filter-buttons text-center" data-aos="fade-up">
+                    <button class="btn btn-outline-primary me-2 mb-2 filter-btn active" data-filter="all">
+                        All Projects
+                    </button>
+                    <button class="btn btn-outline-primary me-2 mb-2 filter-btn" data-filter="featured">
+                        Featured
+                    </button>
+                    <button class="btn btn-outline-primary me-2 mb-2 filter-btn" data-filter="web">
+                        Web Apps
+                    </button>
+                    <button class="btn btn-outline-primary me-2 mb-2 filter-btn" data-filter="api">
+                        APIs
+                    </button>
+                    <button class="btn btn-outline-primary me-2 mb-2 filter-btn" data-filter="data">
+                        Data Science
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Grid -->
+<section class="py-5">
+    <div class="container">
+        <div class="row g-4" id="projects-container">
+            {% for project in projects %}
+            <div class="col-lg-4 col-md-6 project-item" 
+                 data-category="{{ 'featured' if project.featured else 'web' }}" 
+                 data-aos="fade-up" 
+                 data-aos-delay="{{ loop.index * 100 }}">
+                
+                <div class="project-card h-100 shadow-sm">
+                    <!-- Project Image -->
+                    <div class="project-image">
+                        <img src="{{ url_for('static', filename='images/' + project.image) if project.image else url_for('static', filename='images/project-placeholder.jpg') }}" 
+                             alt="{{ project.title }}" 
+                             class="img-fluid">
+                        
+                        <!-- Project Overlay -->
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                {% if project.github_url %}
+                                <a href="{{ project.github_url }}" target="_blank" class="btn btn-light btn-sm me-2">
+                                    <i class="fab fa-github"></i> Code
+                                </a>
+                                {% endif %}
+                                {% if project.demo_url %}
+                                <a href="{{ project.demo_url }}" target="_blank" class="btn btn-primary btn-sm">
+                                    <i class="fas fa-external-link-alt"></i> Demo
+                                </a>
+                                {% endif %}
+                            </div>
+                        </div>
+                        
+                        <!-- Featured Badge -->
+                        {% if project.featured %}
+                        <div class="project-badge">
+                            <span class="badge bg-warning text-dark">
+                                <i class="fas fa-star"></i> Featured
+                            </span>
+                        </div>
+                        {% endif %}
+                    </div>
+                    
+                    <!-- Project Content -->
+                    <div class="project-content p-4">
+                        <h5 class="project-title mb-3">{{ project.title }}</h5>
+                        <p class="project-description text-muted mb-3">{{ project.description }}</p>
+                        
+                        <!-- Technology Tags -->
+                        <div class="tech-tags mb-3">
+                            {% for tech in project.technologies %}
+                            <span class="badge bg-secondary me-1 mb-1">{{ tech }}</span>
+                            {% endfor %}
+                        </div>
+                        
+                        <!-- Project Links -->
+                        <div class="project-actions d-flex justify-content-between align-items-center">
+                            {% if project.github_url %}
+                            <a href="{{ project.github_url }}" target="_blank" class="btn btn-outline-dark btn-sm">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                            {% endif %}
+                            {% if project.demo_url %}
+                            <a href="{{ project.demo_url }}" target="_blank" class="btn btn-primary btn-sm">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        
+        <!-- No Projects Message -->
+        {% if not projects %}
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center" data-aos="fade-up">
+                <div class="no-projects p-5">
+                    <i class="fas fa-folder-open fa-4x text-muted mb-4"></i>
+                    <h3>No Projects Found</h3>
+                    <p class="text-muted">Projects will be displayed here once they are added to the portfolio.</p>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="py-5 bg-primary text-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center" data-aos="fade-up">
+                <h2 class="display-5 fw-bold mb-4">Interested in Working Together?</h2>
+                <p class="lead mb-4">I'm always open to discussing new opportunities and exciting projects.</p>
+                <div class="cta-buttons">
+                    <a href="{{ url_for('contact') }}" class="btn btn-light btn-lg me-3">
+                        <i class="fas fa-envelope me-2"></i>Get In Touch
+                    </a>
+                    <a href="{{ url_for('download_resume') }}" class="btn btn-outline-light btn-lg">
+                        <i class="fas fa-download me-2"></i>Download Resume
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+    // Project filtering functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const projectItems = document.querySelectorAll('.project-item');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                const filterValue = this.getAttribute('data-filter');
+                
+                projectItems.forEach(item => {
+                    if (filterValue === 'all') {
+                        item.style.display = 'block';
+                    } else {
+                        const category = item.getAttribute('data-category');
+                        if (category === filterValue) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    }
+                });
+            });
+        });
+        
+        // Project card hover effects
+        const projectCards = document.querySelectorAll('.project-card');
+        
+        projectCards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,313 @@
+{% extends "base.html" %}
+
+{% block title %}About Me - Shivam Motwani{% endblock %}
+
+{% block content %}
+<!-- About Hero Section -->
+<section class="page-hero bg-primary text-white py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8 mx-auto text-center" data-aos="fade-up">
+                <h1 class="display-4 fw-bold mb-4">About Me</h1>
+                <p class="lead">Learn more about my journey, skills, and passion for creating amazing web experiences</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Content Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-4 mb-4 mb-lg-0" data-aos="fade-right">
+                <div class="about-image text-center">
+                    <img src="{{ url_for('static', filename='images/profile-photo.jpg') }}" 
+                         alt="Shivam Motwani" 
+                         class="img-fluid rounded-circle shadow-lg"
+                         style="width: 300px; height: 300px; object-fit: cover;">
+                </div>
+            </div>
+            
+            <div class="col-lg-8" data-aos="fade-left">
+                <div class="about-content">
+                    <h2 class="display-6 fw-bold mb-4">Hi, I'm Shivam Motwani</h2>
+                    <p class="lead mb-4">
+                        A passionate Full Stack Developer with over [X] years of experience in creating 
+                        beautiful, functional, and user-friendly websites and applications.
+                    </p>
+                    
+                    <p class="mb-4">
+                        I specialize in modern web technologies including Python, JavaScript, React, and Flask. 
+                        My journey in tech started [your background story - e.g., "when I built my first website 
+                        in college"] and since then, I've been constantly learning and evolving with the 
+                        ever-changing landscape of web development.
+                    </p>
+                    
+                    <p class="mb-4">
+                        When I'm not coding, you can find me [your hobbies/interests - e.g., "exploring new 
+                        hiking trails, reading tech blogs, or experimenting with new cooking recipes"]. 
+                        I believe in maintaining a healthy work-life balance and drawing inspiration from 
+                        diverse experiences.
+                    </p>
+                    
+                    <div class="about-stats row g-3 mb-4">
+                        <div class="col-sm-6">
+                            <div class="stat-item text-center p-3 bg-light rounded">
+                                <h3 class="fw-bold text-primary mb-1">[X]+</h3>
+                                <p class="mb-0">Projects Completed</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="stat-item text-center p-3 bg-light rounded">
+                                <h3 class="fw-bold text-primary mb-1">[X]+</h3>
+                                <p class="mb-0">Happy Clients</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="about-actions">
+                        <a href="{{ url_for('download_resume') }}" class="btn btn-primary btn-lg me-3">
+                            <i class="fas fa-download me-2"></i>Download Resume
+                        </a>
+                        <a href="{{ url_for('contact') }}" class="btn btn-outline-primary btn-lg">
+                            <i class="fas fa-envelope me-2"></i>Get In Touch
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Skills Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center mb-5" data-aos="fade-up">
+                <h2 class="display-5 fw-bold">My Skills</h2>
+                <p class="lead text-muted">Technologies and tools I work with</p>
+            </div>
+        </div>
+        
+        <div class="row g-4">
+            <!-- Frontend Skills -->
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="skill-category h-100">
+                    <div class="skill-header text-center mb-4">
+                        <div class="skill-icon mb-3">
+                            <i class="fas fa-paint-brush fa-3x text-primary"></i>
+                        </div>
+                        <h4>Frontend Development</h4>
+                    </div>
+                    
+                    <div class="skills-list">
+                        <div class="skill-item d-flex align-items-center mb-3">
+                            <i class="fab fa-html5 fa-2x text-danger me-3"></i>
+                            <div>
+                                <h6 class="mb-1">HTML5 & CSS3</h6>
+                                <small class="text-muted">Semantic markup and modern styling</small>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item d-flex align-items-center mb-3">
+                            <i class="fab fa-js-square fa-2x text-warning me-3"></i>
+                            <div>
+                                <h6 class="mb-1">JavaScript (ES6+)</h6>
+                                <small class="text-muted">Modern JavaScript and frameworks</small>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item d-flex align-items-center mb-3">
+                            <i class="fab fa-react fa-2x text-info me-3"></i>
+                            <div>
+                                <h6 class="mb-1">React.js</h6>
+                                <small class="text-muted">Component-based UI development</small>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item d-flex align-items-center mb-3">
+                            <i class="fab fa-bootstrap fa-2x text-purple me-3"></i>
+                            <div>
+                                <h6 class="mb-1">Bootstrap & Tailwind</h6>
+                                <small class="text-muted">Responsive CSS frameworks</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Backend Skills -->
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="skill-category h-100">
+                    <div class="skill-header text-center mb-4">
+                        <div class="skill-icon mb-3">
+                            <i class="fas fa-server fa-3x text-success"></i>
+                        </div>
+                        <h4>Backend Development</h4>
+                    </div>
+                    
+                    <div class="skills-list">
+                        <div class="skill-item d-flex align-items-center mb-3">
+                            <i class="fab fa-python fa-2x text-primary me-3"></i>
+                            <div>
+                                <h6 class="mb-1">Python</h6>
+                                <small class="text-muted">Flask, Django, and FastAPI</small>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item d-flex align-items-center mb-3">
+                            <i class="fab fa-node-js fa-2x text-success me-3"></i>
+                            <div>
+                                <h6 class="mb-1">Node.js</h6>
+                                <small class="text-muted">Express.js and REST APIs</small>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item d-flex align-items-center mb-3">
+                            <i class="fas fa-database fa-2x text-info me-3"></i>
+                            <div>
+                                <h6 class="mb-1">Databases</h6>
+                                <small class="text-muted">PostgreSQL, MongoDB, MySQL</small>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item d-flex align-items-center mb-3">
+                            <i class="fas fa-cloud fa-2x text-warning me-3"></i>
+                            <div>
+                                <h6 class="mb-1">Cloud Services</h6>
+                                <small class="text-muted">AWS, Heroku, Docker</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tools & Other Skills -->
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="skill-category h-100">
+                    <div class="skill-header text-center mb-4">
+                        <div class="skill-icon mb-3">
+                            <i class="fas fa-tools fa-3x text-dark"></i>
+                        </div>
+                        <h4>Tools & Other</h4>
+                    </div>
+                    
+                    <div class="skills-list">
+                        <div class="skill-item d-flex align-items-center mb-3">
+                            <i class="fab fa-git-alt fa-2x text-danger me-3"></i>
+                            <div>
+                                <h6 class="mb-1">Git & GitHub</h6>
+                                <small class="text-muted">Version control and collaboration</small>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item d-flex align-items-center mb-3">
+                            <i class="fas fa-code-branch fa-2x text-primary me-3"></i>
+                            <div>
+                                <h6 class="mb-1">DevOps</h6>
+                                <small class="text-muted">CI/CD, Docker, Linux</small>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item d-flex align-items-center mb-3">
+                            <i class="fas fa-chart-line fa-2x text-success me-3"></i>
+                            <div>
+                                <h6 class="mb-1">Data Analysis</h6>
+                                <small class="text-muted">Pandas, NumPy, Matplotlib</small>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item d-flex align-items-center mb-3">
+                            <i class="fas fa-mobile-alt fa-2x text-info me-3"></i>
+                            <div>
+                                <h6 class="mb-1">Responsive Design</h6>
+                                <small class="text-muted">Mobile-first development</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Experience/Education Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center mb-5" data-aos="fade-up">
+                <h2 class="display-5 fw-bold">Experience & Education</h2>
+                <p class="lead text-muted">My professional journey and learning path</p>
+            </div>
+        </div>
+        
+        <div class="row">
+            <!-- Experience -->
+            <div class="col-lg-6 mb-4" data-aos="fade-right">
+                <h3 class="fw-bold mb-4">
+                    <i class="fas fa-briefcase text-primary me-2"></i>Experience
+                </h3>
+                
+                <div class="timeline">
+                    <div class="timeline-item mb-4">
+                        <div class="timeline-content p-4 bg-light rounded">
+                            <h5 class="fw-bold">Senior Full Stack Developer</h5>
+                            <p class="text-primary mb-2">[Company Name] • 2023 - Present</p>
+                            <p class="mb-0">Leading development of scalable web applications using modern technologies. Mentoring junior developers and implementing best practices.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item mb-4">
+                        <div class="timeline-content p-4 bg-light rounded">
+                            <h5 class="fw-bold">Full Stack Developer</h5>
+                            <p class="text-primary mb-2">[Company Name] • 2021 - 2023</p>
+                            <p class="mb-0">Developed and maintained multiple client projects using Python, JavaScript, and cloud technologies. Improved application performance by 40%.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-content p-4 bg-light rounded">
+                            <h5 class="fw-bold">Junior Web Developer</h5>
+                            <p class="text-primary mb-2">[Company Name] • 2020 - 2021</p>
+                            <p class="mb-0">Started my professional journey building responsive websites and learning modern development practices.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Education -->
+            <div class="col-lg-6 mb-4" data-aos="fade-left">
+                <h3 class="fw-bold mb-4">
+                    <i class="fas fa-graduation-cap text-primary me-2"></i>Education
+                </h3>
+                
+                <div class="timeline">
+                    <div class="timeline-item mb-4">
+                        <div class="timeline-content p-4 bg-light rounded">
+                            <h5 class="fw-bold">Bachelor of Computer Science</h5>
+                            <p class="text-primary mb-2">[University Name] • 2016 - 2020</p>
+                            <p class="mb-0">Graduated with honors. Focused on software engineering, algorithms, and web development technologies.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item mb-4">
+                        <div class="timeline-content p-4 bg-light rounded">
+                            <h5 class="fw-bold">Full Stack Web Development</h5>
+                            <p class="text-primary mb-2">[Bootcamp/Course Name] • 2020</p>
+                            <p class="mb-0">Intensive program covering modern web development stack including React, Node.js, and database design.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-content p-4 bg-light rounded">
+                            <h5 class="fw-bold">Continuous Learning</h5>
+                            <p class="text-primary mb-2">Various Platforms • Ongoing</p>
+                            <p class="mb-0">Regular courses on Udemy, Coursera, and other platforms to stay current with latest technologies and best practices.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
