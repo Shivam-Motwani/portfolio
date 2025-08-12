@@ -207,7 +207,7 @@ html {
 
 /* ===== PAGE HERO STYLES ===== */
 .page-hero {
-    padding: 8rem 0 4rem;
+    padding: 15rem 0 4rem;
     background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
 }
 
@@ -530,7 +530,7 @@ footer .social-links a:hover {
     }
     
     .page-hero {
-        padding: 6rem 0 3rem;
+        padding: 12rem 0 3rem;
     }
     
     .timeline::before {
