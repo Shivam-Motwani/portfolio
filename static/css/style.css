@@ -34,6 +34,7 @@ body {
     color: var(--text-dark);
     overflow-x: hidden;
     background-color: #1a1a1a;
+    padding-top: 80px; /* Account for fixed navbar height */
 }
 
 /* Ensure all text elements are light colored */
@@ -61,6 +62,18 @@ h1, h2, h3, h4, h5, h6, p, span, div, a, li, td, th, label {
     color: #f5f5f5 !important;
 }
 
+.btn-dark {
+    background-color: #2d2d2d !important;
+    border-color: #404040 !important;
+    color: #f5f5f5 !important;
+}
+
+.btn-dark:hover {
+    background-color: #404040 !important;
+    border-color: #555555 !important;
+    color: #ffffff !important;
+}
+
 .btn-outline-primary {
     color: #f5f5f5 !important;
     border-color: var(--primary-color) !important;
@@ -80,6 +93,49 @@ h1, h2, h3, h4, h5, h6, p, span, div, a, li, td, th, label {
 /* Lead text and other Bootstrap classes */
 .lead {
     color: #d1d1d1 !important;
+}
+
+/* Profile Image Styling */
+.profile-image {
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+    border: 4px solid var(--primary-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: var(--light-color);
+}
+
+.profile-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 40px rgba(220, 38, 38, 0.3) !important;
+}
+
+.profile-placeholder {
+    margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+    .profile-image {
+        width: 220px;
+        height: 220px;
+    }
+    
+    .profile-placeholder > div {
+        width: 220px !important;
+        height: 220px !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .profile-image {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .profile-placeholder > div {
+        width: 180px !important;
+        height: 180px !important;
+    }
 }
 
 .container {
@@ -116,12 +172,14 @@ html {
     box-shadow: var(--shadow-sm);
     transition: var(--transition);
     padding: 1rem 0;
+    min-height: 80px; /* Consistent navbar height */
 }
 
 #mainNav.scrolled {
     background: rgba(26, 26, 26, 0.98);
     box-shadow: var(--shadow-md);
     padding: 0.5rem 0;
+    min-height: 70px; /* Slightly shorter when scrolled */
 }
 
 .navbar-brand {
@@ -207,7 +265,7 @@ html {
 
 /* ===== PAGE HERO STYLES ===== */
 .page-hero {
-    padding: 15rem 0 4rem;
+    padding: 8rem 0 4rem;
     background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
 }
 
@@ -520,6 +578,20 @@ footer .social-links a:hover {
 
 /* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 768px) {
+    body {
+        padding-top: 70px; /* Smaller navbar on mobile */
+    }
+    
+    #mainNav {
+        padding: 0.75rem 0;
+        min-height: 70px; /* Smaller navbar on mobile */
+    }
+    
+    #mainNav.scrolled {
+        padding: 0.5rem 0;
+        min-height: 60px;
+    }
+    
     .hero-section {
         padding: 2rem 0;
         min-height: 90vh;
@@ -530,7 +602,7 @@ footer .social-links a:hover {
     }
     
     .page-hero {
-        padding: 12rem 0 3rem;
+        padding: 6rem 0 3rem;
     }
     
     .timeline::before {
@@ -603,6 +675,19 @@ footer .social-links a:hover {
 
 .accordion-button:focus {
     box-shadow: 0 0 0 0.25rem rgba(220, 38, 38, 0.25);
+}
+
+.accordion-item {
+    background: var(--light-color);
+    border: 1px solid var(--border-color);
+    margin-bottom: 0.5rem;
+    border-radius: var(--border-radius);
+}
+
+.accordion-body {
+    background: var(--light-color);
+    color: #f5f5f5;
+    border-top: 1px solid var(--border-color);
 }
 
 /* ===== FILTER BUTTONS ===== */

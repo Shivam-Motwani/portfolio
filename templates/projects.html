@@ -16,7 +16,7 @@
 </section>
 
 <!-- Filter Section -->
-<section class="py-4 bg-light">
+<section class="py-4" style="background-color: #1a1a1a;">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -30,11 +30,8 @@
                     <button class="btn btn-outline-primary me-2 mb-2 filter-btn" data-filter="web">
                         Web Apps
                     </button>
-                    <button class="btn btn-outline-primary me-2 mb-2 filter-btn" data-filter="api">
-                        APIs
-                    </button>
-                    <button class="btn btn-outline-primary me-2 mb-2 filter-btn" data-filter="data">
-                        Data Science
+                    <button class="btn btn-outline-primary me-2 mb-2 filter-btn" data-filter="ml">
+                        Machine Learning
                     </button>
                 </div>
             </div>
@@ -48,7 +45,7 @@
         <div class="row g-4" id="projects-container">
             {% for project in projects %}
             <div class="col-lg-4 col-md-6 project-item" 
-                 data-category="{{ 'featured' if project.featured else 'web' }}" 
+                 data-category="{{ project.category if project.category else 'web' }}{{ ' featured' if project.featured else '' }}" 
                  data-aos="fade-up" 
                  data-aos-delay="{{ loop.index * 100 }}">
                 
@@ -63,7 +60,7 @@
                         <div class="project-overlay">
                             <div class="project-links">
                                 {% if project.github_url %}
-                                <a href="{{ project.github_url }}" target="_blank" class="btn btn-light btn-sm me-2">
+                                <a href="{{ project.github_url }}" target="_blank" class="btn btn-dark btn-sm me-2">
                                     <i class="fab fa-github"></i> Code
                                 </a>
                                 {% endif %}
@@ -132,14 +129,14 @@
 </section>
 
 <!-- Call to Action -->
-<section class="py-5 bg-primary text-white">
+<section class="py-5 text-white" style="background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 mx-auto text-center" data-aos="fade-up">
                 <h2 class="display-5 fw-bold mb-4">Interested in Working Together?</h2>
                 <p class="lead mb-4">I'm always open to discussing new opportunities and exciting projects.</p>
                 <div class="cta-buttons">
-                    <a href="{{ url_for('contact') }}" class="btn btn-light btn-lg me-3">
+                    <a href="{{ url_for('contact') }}" class="btn btn-dark btn-lg me-3">
                         <i class="fas fa-envelope me-2"></i>Get In Touch
                     </a>
                     <a href="{{ url_for('download_resume') }}" class="btn btn-outline-light btn-lg">

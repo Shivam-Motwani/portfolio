@@ -159,7 +159,8 @@ function initializeProjectFilter() {
             
             projectItems.forEach(item => {
                 const category = item.getAttribute('data-category');
-                const shouldShow = filterValue === 'all' || category === filterValue;
+                const categoryList = category ? category.split(' ') : [];
+                const shouldShow = filterValue === 'all' || categoryList.includes(filterValue);
                 
                 if (shouldShow) {
                     item.style.display = 'block';

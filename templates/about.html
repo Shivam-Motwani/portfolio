@@ -22,9 +22,15 @@
             <div class="col-lg-4 mb-4 mb-lg-0" data-aos="fade-right">
                 <div class="about-image text-center">
                     <img src="{{ url_for('static', filename='images/profile-photo.jpg') }}" 
-                         alt="Shivam Motwani" 
-                         class="img-fluid rounded-circle shadow-lg"
-                         style="width: 300px; height: 300px; object-fit: cover;">
+                         alt="Shivam Motwani - Computer Science Student" 
+                         class="profile-image img-fluid rounded-circle shadow-lg"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div class="profile-placeholder" style="display: none;">
+                        <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center" 
+                             style="width: 280px; height: 280px; margin: 0 auto;">
+                            <span class="text-white" style="font-size: 3rem; font-weight: bold;">SM</span>
+                        </div>
+                    </div>
                 </div>
             </div>
             
