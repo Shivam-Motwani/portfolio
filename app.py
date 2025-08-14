@@ -6,7 +6,7 @@ import os
 from datetime import datetime
 
 app = Flask(__name__)
-app.secret_key = 'your-secret-key-change-this-in-production'
+app.secret_key = os.environ.get('SECRET_KEY', 'dev-secret-key-change-in-production')
 
 # Flask-Mail configuration (optional - for contact form)
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
@@ -102,4 +102,6 @@ def send_contact_email(name, email, message):
         print(f"Error sending email: {e}")
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    # Use debug=True for local development only
+    debug_mode = os.environ.get('FLASK_ENV') == 'development'
+    app.run(debug=debug_mode)
