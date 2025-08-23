@@ -237,10 +237,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙋‍♂️ Support
 
-If you need help with setup or customization:
-- Check the [Issues](https://github.com/yourusername/portfolio/issues) page
+If you need help with setup or customization
 - Create a new issue if you find a bug
-- Contact me at your.email@example.com
+- Contact me at theoryofnumbers123@gmail.com
 
 ## 🎯 Roadmap
 
