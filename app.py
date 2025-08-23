@@ -65,9 +65,35 @@ def contact():
 def download_resume():
     """Download resume file"""
     try:
-        return send_file('static/files/resume.pdf', as_attachment=True)
-    except FileNotFoundError:
-        flash('Resume file not found. Please contact me directly.', 'error')
+        # Look for the new resume filename first
+        resume_filename = 'Shivam_Motwani_Resume.pdf'
+        resume_path = os.path.join(os.path.dirname(__file__), 'static', 'files', resume_filename)
+        
+        # If new resume doesn't exist, fallback to old filename
+        if not os.path.exists(resume_path):
+            resume_filename = 'resume.pdf'
+            resume_path = os.path.join(os.path.dirname(__file__), 'static', 'files', resume_filename)
+        
+        # Alternative path construction for production environments
+        if not os.path.exists(resume_path):
+            resume_path = os.path.join(app.static_folder, 'files', resume_filename)
+        
+        # Final check if file exists
+        if not os.path.exists(resume_path):
+            flash('Resume file is currently unavailable. Please contact me directly.', 'error')
+            return redirect(url_for('contact'))
+        
+        # Send file with proper headers for download
+        return send_file(
+            resume_path,
+            as_attachment=True,
+            download_name='Shivam_Motwani_Resume.pdf',
+            mimetype='application/pdf'
+        )
+        
+    except Exception as e:
+        app.logger.error(f"Resume download error: {str(e)}")
+        flash('Unable to download resume at this time. Please try again later.', 'error')
         return redirect(url_for('contact'))
 
 def save_contact_to_csv(name, email, message):
